@@ -1,0 +1,26 @@
+<body>
+    <div id="root"></div>
+    <script src="https://cdn.jsdelivr.net/npm/react@17.0.2/umd/react.development.js">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/react-dom@17.0.2/umd/react-dom.development.js">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.14.1/babel.js">
+    </script>
+    <script type="text/babel">
+        function Button() {
+            const [conteo, setConteo] = React.useState(0);
+            const handleClick = () => setConteo(conteo + 1);
+            return <button onClick={handleClick}>{conteo}</button>;
+        }
+        function Display() {
+            return <div> Soy un segundo componente</div>;
+        }
+        ReactDOM.render(
+            <>
+                <Button />
+                <Display />
+            </>,
+            document.getElementById('root')
+        );
+    </script>
+</body>

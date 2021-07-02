@@ -1,0 +1,35 @@
+<body>
+    <div id="root"></div>
+    <script src="https://cdn.jsdelivr.net/npm/react@17.0.2/umd/react.development.js">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/react-dom@17.0.2/umd/react-dom.development.js">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.14.1/babel.js">
+    </script>
+    <script type="text/babel">
+    //2.- Componente simple; sin propiedadades ni estado
+    // function logRandom() {
+    //     console.log(Math.random());
+    // }
+    // function Button() {
+    //     return <button onClick={logRandom}>Haz clic</button>;
+    // }
+
+    //3.- Componente simple; sin propiedadades, con estado y manejo de eventos
+    // function Button() {
+    //     const [conteo, setConteo] = React.useState(0);
+    //     return <button onClick={() => setConteo(conteo + 1)}>{conteo}</button>;
+    // }
+
+    //4.- Declare una variable para una función que maneje el evento, en lugar de la
+        // función anónima.
+        function Button() {
+            const [conteo, setConteo] = React.useState(0);
+            const handleClick = () => setConteo(conteo + 1);
+            return <button onClick={handleClick}>{conteo}</button>;
+        }
+
+
+        ReactDOM.render(<Button/>,document.getElementById('root') );
+    </script>
+</body>

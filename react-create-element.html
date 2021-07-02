@@ -1,0 +1,36 @@
+<body>
+    <div id="root"></div>
+    <script src="https://cdn.jsdelivr.net/npm/react@17.0.2/umd/react.development.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react-dom@17.0.2/umd/react-dom.development.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.14.1/babel.js"></script>
+    <script type="text/babel">
+       // const rootElement = document.getElementById('root');
+       // const element = document.createElement('div');
+       // element.textContent = 'Hola a todos';
+       // element.className = 'container';
+       // rootElement.appendChild(element);
+
+       
+       // 2.- Usando el API de React para crear un elemento y renderizarlo.
+    // const rootElement = document.getElementById("root");
+    // const element = React.createElement("div", {
+        // children: [
+        //     'Hola a todos. ',
+        //     ' Bienvenidos a React. ',
+        //     ' Estamos usando el API de React. ',
+        // ],
+    //     children: React.createElement(
+    //         'span', null,
+    //         'Hola a todos. ',
+    //         'Bienvenidos a React. ',
+    //         'Estamos usando el API de React.'
+    //     ),
+    //     className: 'container',
+    // });
+
+// 3.- Usando JSX y Babel
+    const rootElement = document.getElementById('root');
+    const element = <div className="container">Hola a todos. Bienvenidos a React. Estamos usando JSX</div>
+    ReactDOM.render(element, rootElement);
+    </script>
+</body>

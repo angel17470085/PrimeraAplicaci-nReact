@@ -1,0 +1,34 @@
+<body>
+    <div id="root"></div>
+    <script src="https://cdn.jsdelivr.net/npm/react@17.0.2/umd/react.development.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react-dom@17.0.2/umd/react-dom.development.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.14.1/babel.js"></script>
+    <script type="text/babel">
+     function Button(props) {
+        const handleClick = () => props.onClickFunction(props.incrementsBy);
+        return <button onClick={handleClick}>+{props.incrementsBy}</button>;
+        }
+        
+        function Display(props) {
+            return <div>{props.message}</div>;
+        }
+
+        function App() {
+            const [conteo, setConteo] = React.useState(1);
+            const IncrementarConteo = (incrementValue) => setConteo(conteo + incrementValue);
+                return (
+                    <div>
+                        <Button incrementsBy={1} onClickFunction={IncrementarConteo} />
+                        <Button incrementsBy={2} onClickFunction={IncrementarConteo} />
+                        <Button incrementsBy={5} onClickFunction={IncrementarConteo} />
+                        <Button incrementsBy={10} onClickFunction={IncrementarConteo} />
+                        <Button incrementsBy={100} onClickFunction={IncrementarConteo} />
+                        <Display message={conteo} />
+                    </div>
+                );
+            }
+        ReactDOM.render(
+            <App />,document.getElementById("root")
+        );
+    </script>
+</body>
